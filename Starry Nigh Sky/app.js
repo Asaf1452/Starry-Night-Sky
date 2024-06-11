@@ -14,10 +14,10 @@ const init = () => {
 
 class Star {
   constructor() {
-    this.size = Math.random() * 4 + 0.1;
-    this.maxSize = 5;
+    this.size = Math.random() * 2 + 0.1;
+    this.maxSize = 3.5;
     this.minSize = 0.1;
-    this.approaching = true;
+    this.sparkle = true;
     this.xPos = Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
     this.yPos = Math.random() * (window.innerHeight - 80) + 30;
   }
@@ -38,22 +38,22 @@ class Star {
     ctx.strokeStyle = "white";
     ctx.fillStyle = "white";
     ctx.shadowColor = "white";
-    ctx.shadowBlur = 8;
+    ctx.shadowBlur = 6;
     ctx.fill();
     ctx.stroke();
   }
 
   update() {
     if (this.size >= this.maxSize) {
-      this.approaching = false;
+      this.sparkle = false;
     } else if (this.size <= this.minSize) {
       this.xPos = Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
       this.yPos = Math.random() * (window.innerHeight - 80) + 30;
-      this.approaching = true;
+      this.sparkle = true;
     }
 
-    if (this.approaching) this.size += Math.random() * 0.4;
-    else this.size -= Math.random() * 0.4;
+    if (this.sparkle) this.size += Math.random() * 0.3;
+    else this.size -= Math.random() * 0.3;
   }
 }
 

@@ -66,7 +66,7 @@ const animate = (ctx, stars) => {
       star.render(ctx);
       star.update();
     });
-  }, 10);
+  }, 80);
 };
 
 const updateCanvasSize = (canvas) => {

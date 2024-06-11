@@ -18,9 +18,8 @@ class Star {
     this.maxSize = 5;
     this.minSize = 0.1;
     this.approaching = true;
-    this.xPos =
-      Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
-    this.yPos = Math.random() * (window.innerHeight - 200) + 50;
+    this.xPos = Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
+    this.yPos = Math.random() * (window.innerHeight - 80) + 30;
   }
 
   render(ctx) {
@@ -48,9 +47,8 @@ class Star {
     if (this.size >= this.maxSize) {
       this.approaching = false;
     } else if (this.size <= this.minSize) {
-      this.xPos =
-        Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
-      this.yPos = Math.random() * (window.innerHeight - 200) + 50;
+      this.xPos = Math.random() * (window.innerWidth - this.size * 6) + this.size * 3;
+      this.yPos = Math.random() * (window.innerHeight - 80) + 30;
       this.approaching = true;
     }
 
@@ -68,7 +66,7 @@ const animate = (ctx, stars) => {
       star.render(ctx);
       star.update();
     });
-  }, 80);
+  }, 10);
 };
 
 const updateCanvasSize = (canvas) => {
